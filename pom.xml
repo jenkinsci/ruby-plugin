@@ -9,11 +9,7 @@
 
     <artifactId>ruby</artifactId>
     <packaging>hpi</packaging>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <name>Hudson Ruby Plugin</name>
     <url>http://hudson.gotdns.com/wiki/display/HUDSON/Ruby+Plugin</url>
-
-  <scm>
-    <tag>ruby-1_0</tag>
-  </scm>
 </project>

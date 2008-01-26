@@ -53,7 +53,7 @@ public class Ruby extends CommandInterpreter {
 
         @Override
         public String getHelpFile() {
-            return "/plugin/Ruby/help.html";
+            return "/plugin/ruby/help.html";
         }
     }
 }

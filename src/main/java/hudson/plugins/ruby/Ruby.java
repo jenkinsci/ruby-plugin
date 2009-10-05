@@ -1,5 +1,6 @@
 package hudson.plugins.ruby;
 
+import hudson.Extension;
 import hudson.FilePath;
 import hudson.model.Descriptor;
 import hudson.tasks.Builder;
@@ -32,10 +33,12 @@ public class Ruby extends CommandInterpreter {
         return ".rb";
     }
 
+    @Override
     public Descriptor<Builder> getDescriptor() {
         return DESCRIPTOR;
     }
 
+    @Extension
     public static final DescriptorImpl DESCRIPTOR = new DescriptorImpl();
 
     public static final class DescriptorImpl extends Descriptor<Builder> {
@@ -43,6 +46,7 @@ public class Ruby extends CommandInterpreter {
             super(Ruby.class);
         }
 
+        @Override
         public Builder newInstance(StaplerRequest req, JSONObject formData) {
             return new Ruby(formData.getString("ruby"));
         }

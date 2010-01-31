@@ -9,7 +9,7 @@
 
     <artifactId>ruby</artifactId>
     <packaging>hpi</packaging>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.2</version>
     <name>Hudson Ruby Plugin</name>
     <url>http://wiki.hudson-ci.org/display/HUDSON/Ruby+Plugin</url>
 
@@ -19,4 +19,10 @@
         <name>Vivek Pandey</name>
       </developer>
     </developers>
+
+  <scm>
+    <connection>scm:svn:https://guest@svn.dev.java.net/svn/hudson/tags/ruby-1.2</connection>
+    <developerConnection>scm:svn:https://svn.dev.java.net/svn/hudson/tags/ruby-1.2</developerConnection>
+    <url>https://hudson.dev.java.net/source/browse/hudson/tags/ruby-1.2</url>
+  </scm>
 </project>

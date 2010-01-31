@@ -12,4 +12,11 @@
     <version>1.2-SNAPSHOT</version>
     <name>Hudson Ruby Plugin</name>
     <url>http://wiki.hudson-ci.org/display/HUDSON/Ruby+Plugin</url>
+
+    <developers>
+      <developer>
+        <id>vivekp</id>
+        <name>Vivek Pandey</name>
+      </developer>
+    </developers>
 </project>

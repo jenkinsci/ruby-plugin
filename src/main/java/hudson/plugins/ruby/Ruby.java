@@ -2,10 +2,13 @@ package hudson.plugins.ruby;
 
 import hudson.Extension;
 import hudson.FilePath;
+import hudson.model.AbstractProject;
 import hudson.model.Descriptor;
+import hudson.tasks.BuildStepDescriptor;
 import hudson.tasks.Builder;
 import hudson.tasks.CommandInterpreter;
 import net.sf.json.JSONObject;
+import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.StaplerRequest;
 
 /**
@@ -17,11 +20,12 @@ import org.kohsuke.stapler.StaplerRequest;
  */
 public class Ruby extends CommandInterpreter {
 
-    private Ruby(String command) {
+    @DataBoundConstructor
+    public Ruby(String command) {
         super(command);
     }
 
-    protected String[] buildCommandLine(FilePath script) {
+    public String[] buildCommandLine(FilePath script) {
         return new String[]{"ruby", "-v", script.getRemote()};
     }
 
@@ -41,9 +45,16 @@ public class Ruby extends CommandInterpreter {
     @Extension
     public static final DescriptorImpl DESCRIPTOR = new DescriptorImpl();
 
-    public static final class DescriptorImpl extends Descriptor<Builder> {
-        private DescriptorImpl() {
+    public static final class DescriptorImpl extends BuildStepDescriptor<Builder> {
+
+        DescriptorImpl() {
             super(Ruby.class);
+            load();
+        }
+
+        @Override
+        public boolean isApplicable(Class<? extends AbstractProject> aClass) {
+            return true;
         }
 
         @Override

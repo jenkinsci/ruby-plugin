@@ -25,7 +25,7 @@ public class Ruby extends CommandInterpreter {
         super(command);
     }
 
-    protected String[] buildCommandLine(FilePath script) {
+    public String[] buildCommandLine(FilePath script) {
         return new String[]{"ruby", "-v", script.getRemote()};
     }
 
